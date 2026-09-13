@@ -2,8 +2,6 @@
 
 ![caffeinete menu bar icon cycling through timer states](assets/caffeinete_demo.gif)
 
-Sorry, HUMANS
-
-See [AGENTS.md](AGENTS.md) for details.
+Sorry, HUMANS; [AGENTS.md](AGENTS.md).
 
 [SwiftBar](https://github.com/swiftbar/SwiftBar)
