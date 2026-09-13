@@ -7,6 +7,7 @@ My SwiftBar menu bar plugin — caffeinate timer.
 - `plugin/` — SwiftBar plugin folder. This IS the plugin folder configured in SwiftBar settings (not symlinked). Each plugin is an executable script; SwiftBar auto-runs every executable file in this folder, so non-plugin files must NOT be executable or must be dotfiles.
 - `assets/` — icon files (`.<name>_icon-{active,inactive}.png`) and raw artwork (`.<name>_raw.png`). Scripts locate this as `../assets` relative to the plugin folder.
 - `tools/make_swiftbar_icon.sh` — regenerates menu bar icons from artwork raws.
+- `tools/make_demo_gif.py` — renders `assets/caffeinete_demo.gif`, a square animated demo of the icon click cycle (off → 10 → 20 → 30 → 40m, with press pulses). Re-run after changing any `caffeinete_icon-*.png`.
 
 ## Plugins
 
