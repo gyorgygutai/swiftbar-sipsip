@@ -25,8 +25,8 @@ ASSETS = REPO / "assets"
 
 # --- Canvas ---------------------------------------------------------------
 FPS = 12
-HOLD_S = 0.8        # hold per timer state
-OFF_HOLD_S = 1.0    # slightly longer on 'off' so the loop start reads clearly
+HOLD_S = 0.6        # hold per timer state
+OFF_HOLD_S = 0.75   # slightly longer on 'off' so the loop start reads clearly
 FLASH_S = 0.12      # click press duration between states
 PRESS_SCALE = 0.90  # icon scale during the press pulse
 PRESS_ALPHA = 0.45  # icon alpha multiplier during the press pulse
