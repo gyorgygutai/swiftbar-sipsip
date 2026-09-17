@@ -26,8 +26,9 @@ toggle() {
 
     killall caffeinate >/dev/null 2>&1
 
-    if [ "$NEXT" -gt 0 ]; then
-        caffeinate -d -u -t $((NEXT * 60)) >/dev/null 2>&1 &
+if [ "$NEXT" -gt 0 ]; then
+        nohup caffeinate -d -u -t $((NEXT * 60)) >/dev/null 2>&1 &
+        disown
         echo "$NEXT $(($(date +%s) + NEXT * 60))" > "$STATE_FILE"
     else
         echo "0 0" > "$STATE_FILE"
