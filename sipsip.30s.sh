@@ -1,8 +1,10 @@
 #!/bin/bash
 
 SCRIPT_PATH="${SWIFTBAR_PLUGIN_PATH:-$0}"
-ICON_DIR="$(dirname "$SCRIPT_PATH")/../assets"
-STATE_FILE="$(dirname "$SCRIPT_PATH")/.caffeinete_state"
+REAL_PATH=$(readlink -f "$SCRIPT_PATH" 2>/dev/null || echo "$SCRIPT_PATH")
+SCRIPT_DIR=$(dirname "$REAL_PATH")
+ICON_DIR="$SCRIPT_DIR/assets"
+STATE_FILE="$SCRIPT_DIR/.sipsip_state"
 
 img_b64() { base64 < "$1" 2>/dev/null | tr -d '\n'; }
 
@@ -45,9 +47,9 @@ NOW=$(date +%s)
 read -r TIER DEADLINE < "$STATE_FILE" 2>/dev/null || { TIER=0; DEADLINE=0; }
 
 if [ "$DEADLINE" -gt "$NOW" ] && pgrep -x caffeinate >/dev/null 2>&1; then
-    ICON="$ICON_DIR/caffeinete_icon-${TIER}m.png"
+    ICON="$ICON_DIR/sipsip_icon-${TIER}m.png"
 else
-    ICON="$ICON_DIR/caffeinete_icon-off.png"
+    ICON="$ICON_DIR/sipsip_icon-off.png"
 fi
 
 IMAGE_B64=$(img_b64 "$ICON")

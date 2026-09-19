@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Animated README demo GIF for the caffeinete SwiftBar plugin.
+"""Animated README demo GIF for the sipsip SwiftBar plugin.
 
 Square 1:1 canvas, icon large and centered, cycling through the click states:
 off -> 10m -> 20m -> 30m -> 40m -> off
@@ -37,7 +37,7 @@ ORDER = ["off", "10m", "20m", "30m", "40m"]
 def load_icons() -> dict[str, Image.Image]:
     icons = {}
     for s in ORDER:
-        p = ASSETS / f"caffeinete_icon-{s}.png"
+        p = ASSETS / f"sipsip_icon-{s}.png"
         img = Image.open(p).convert("RGBA")
         if img.size != (44, 44):
             img = img.resize((44, 44), Image.LANCZOS)
@@ -96,7 +96,7 @@ def encode_gif(frames_dir: Path, out: Path, fps: int) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out", default=str(ASSETS / "caffeinete_demo.gif"))
+    ap.add_argument("--out", default=str(ASSETS / "sipsip_demo.gif"))
     ap.add_argument("--size", type=int, default=320, help="square canvas size in px")
     ap.add_argument("--icon", type=int, default=0,
                     help="icon size in px (default: 56%% of canvas, multiple of 44)")

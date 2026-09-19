@@ -4,7 +4,7 @@ set -euo pipefail
 RAW=$1
 NAME=$2
 DIR=$(dirname "$RAW")
-OUT="$DIR/caffeinete_icon-${NAME}.png"
+OUT="$DIR/sipsip_${NAME}_icon-${NAME}.png"
 
 magick "$RAW" -fuzz 2% -trim +repage -resize 32x32 -colorspace gray \
   -alpha set -channel A -fx "(1-r)" \
